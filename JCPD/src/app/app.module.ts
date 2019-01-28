@@ -18,15 +18,6 @@ import { CasosService} from './services/casos.service';
 
 import {NgxPaginationModule} from 'ngx-pagination';
 // AoT requires an exported function for factories
-export const createTranslateLoader = (http: HttpClient) => {
-    /* for development
-    return new TranslateHttpLoader(
-        http,
-        '/start-angular/SB-Admin-BS4-Angular-6/master/dist/assets/i18n/',
-        '.json'
-    ); */
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-};
 
 @NgModule({
     imports: [
@@ -35,13 +26,6 @@ export const createTranslateLoader = (http: HttpClient) => {
         BrowserAnimationsModule,
         HttpClientModule,
         NgxPaginationModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: createTranslateLoader,
-                deps: [HttpClient]
-            }
-        }),
         AppRoutingModule
     ],
     declarations: [AppComponent],
