@@ -131,6 +131,7 @@ var routes = [
     { path: 'error', loadChildren: './server-error/server-error.module#ServerErrorModule' },
     { path: 'access-denied', loadChildren: './access-denied/access-denied.module#AccessDeniedModule' },
     { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
+    { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
     { path: '**', redirectTo: 'not-found' }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -232,6 +233,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared */ "./src/app/shared/index.ts");
 /* harmony import */ var _services_casos_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/casos.service */ "./src/app/services/casos.service.ts");
 /* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
+/* harmony import */ var _user_login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user/login/login.component */ "./src/app/user/login/login.component.ts");
+/* harmony import */ var _user_register_register_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user/register/register.component */ "./src/app/user/register/register.component.ts");
+/* harmony import */ var _user_profile_profile_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user/profile/profile.component */ "./src/app/user/profile/profile.component.ts");
+/* harmony import */ var _user_page404_page404_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./user/page404/page404.component */ "./src/app/user/page404/page404.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -250,6 +255,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 // NGX-PAGINATION.--- ESTO NOS VA A SERVIR PARA LA PAGINACION
 
+
+
+
+
 // AoT requires an exported function for factories
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -264,7 +273,7 @@ var AppModule = /** @class */ (function () {
                 ngx_pagination__WEBPACK_IMPORTED_MODULE_9__["NgxPaginationModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]
             ],
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"], _user_login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"], _user_register_register_component__WEBPACK_IMPORTED_MODULE_11__["RegisterComponent"], _user_profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _user_page404_page404_component__WEBPACK_IMPORTED_MODULE_13__["Page404Component"]],
             providers: [_shared__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"], _services_casos_service__WEBPACK_IMPORTED_MODULE_8__["CasosService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
@@ -712,6 +721,258 @@ var SharedPipesModule = /** @class */ (function () {
         })
     ], SharedPipesModule);
     return SharedPipesModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/login/login.component.html":
+/*!*************************************************!*\
+  !*** ./src/app/user/login/login.component.html ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  login works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/user/login/login.component.scss":
+/*!*************************************************!*\
+  !*** ./src/app/user/login/login.component.scss ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvbG9naW4vbG9naW4uY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/user/login/login.component.ts":
+/*!***********************************************!*\
+  !*** ./src/app/user/login/login.component.ts ***!
+  \***********************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LoginComponent = /** @class */ (function () {
+    function LoginComponent() {
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-login',
+            template: __webpack_require__(/*! ./login.component.html */ "./src/app/user/login/login.component.html"),
+            styles: [__webpack_require__(/*! ./login.component.scss */ "./src/app/user/login/login.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], LoginComponent);
+    return LoginComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/page404/page404.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/user/page404/page404.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  page404 works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/user/page404/page404.component.scss":
+/*!*****************************************************!*\
+  !*** ./src/app/user/page404/page404.component.scss ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvcGFnZTQwNC9wYWdlNDA0LmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/user/page404/page404.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/user/page404/page404.component.ts ***!
+  \***************************************************/
+/*! exports provided: Page404Component */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Page404Component", function() { return Page404Component; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var Page404Component = /** @class */ (function () {
+    function Page404Component() {
+    }
+    Page404Component.prototype.ngOnInit = function () {
+    };
+    Page404Component = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-page404',
+            template: __webpack_require__(/*! ./page404.component.html */ "./src/app/user/page404/page404.component.html"),
+            styles: [__webpack_require__(/*! ./page404.component.scss */ "./src/app/user/page404/page404.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], Page404Component);
+    return Page404Component;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/profile/profile.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/user/profile/profile.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  profile works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/user/profile/profile.component.scss":
+/*!*****************************************************!*\
+  !*** ./src/app/user/profile/profile.component.scss ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvcHJvZmlsZS9wcm9maWxlLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/user/profile/profile.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/user/profile/profile.component.ts ***!
+  \***************************************************/
+/*! exports provided: ProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileComponent", function() { return ProfileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProfileComponent = /** @class */ (function () {
+    function ProfileComponent() {
+    }
+    ProfileComponent.prototype.ngOnInit = function () {
+    };
+    ProfileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-profile',
+            template: __webpack_require__(/*! ./profile.component.html */ "./src/app/user/profile/profile.component.html"),
+            styles: [__webpack_require__(/*! ./profile.component.scss */ "./src/app/user/profile/profile.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ProfileComponent);
+    return ProfileComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/register/register.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/user/register/register.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  register works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/user/register/register.component.scss":
+/*!*******************************************************!*\
+  !*** ./src/app/user/register/register.component.scss ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvcmVnaXN0ZXIvcmVnaXN0ZXIuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/user/register/register.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/user/register/register.component.ts ***!
+  \*****************************************************/
+/*! exports provided: RegisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterComponent", function() { return RegisterComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var RegisterComponent = /** @class */ (function () {
+    function RegisterComponent() {
+    }
+    RegisterComponent.prototype.ngOnInit = function () {
+    };
+    RegisterComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-register',
+            template: __webpack_require__(/*! ./register.component.html */ "./src/app/user/register/register.component.html"),
+            styles: [__webpack_require__(/*! ./register.component.scss */ "./src/app/user/register/register.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], RegisterComponent);
+    return RegisterComponent;
 }());
 
 

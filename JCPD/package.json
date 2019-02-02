@@ -29,6 +29,8 @@
         "@ngx-translate/http-loader": "4.0.0",
         "electron": "^4.0.1",
         "font-awesome": "4.7.0",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.7",
         "rxjs": "6.3.3",
         "yarn": "1.12.1",
         "zone.js": "0.8.26"

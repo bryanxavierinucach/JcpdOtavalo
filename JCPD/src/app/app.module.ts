@@ -17,6 +17,10 @@ import { CasosService} from './services/casos.service';
 // NGX-PAGINATION.--- ESTO NOS VA A SERVIR PARA LA PAGINACION
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { LoginComponent } from './user/login/login.component';
+import { RegisterComponent } from './user/register/register.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { Page404Component } from './user/page404/page404.component';
 // AoT requires an exported function for factories
 
 @NgModule({
@@ -28,7 +32,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
         NgxPaginationModule,
         AppRoutingModule
     ],
-    declarations: [AppComponent],
+    declarations: [AppComponent, LoginComponent, RegisterComponent, ProfileComponent, Page404Component],
     providers: [AuthGuard, CasosService],
     bootstrap: [AppComponent]
 })
