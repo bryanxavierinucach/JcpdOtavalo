@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Caso } from '../models/Caso';
 import { Observable } from 'rxjs';
-import {AuthService } from './auth.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +10,7 @@ export class CasosService {
    // Coneccion al servidor de NODE, DONDE TENEMOS LA BASE DE DATOS
   API_URI = 'http://localhost:3000/api';
 
-  constructor( private http: HttpClient,  private authService: AuthService) { }
+  constructor( private http: HttpClient ) { }
 
   getCasos() {
     return this.http.get(`${ this.API_URI }/casos`);

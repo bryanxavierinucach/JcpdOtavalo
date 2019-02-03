@@ -4,7 +4,7 @@ import cors from 'cors';
 
 import indexRoutes from './routes/indexRoutes';
 import casosRoutes from './routes/casosRoutes';
-import usersRoutes from './routes/usersRoutes';
+import usersController from './routes/usersRoutes';
 
 
 
@@ -27,8 +27,8 @@ class Server{
     routes():void {
         this.app.use('/',indexRoutes);
         this.app.use('/api/casos', casosRoutes);
-        this.app.use('/api/users', usersRoutes);
-        
+        this.app.use('/api/casos', usersController);
+        usersController
         
     }
     start(): void{

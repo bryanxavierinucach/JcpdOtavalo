@@ -34,7 +34,7 @@ import { from } from 'rxjs';
         AppRoutingModule
     ],
     declarations: [AppComponent, LoginComponent, RegisterComponent, ProfileComponent, Page404Component],
-    providers: [AuthGuard, CasosService, AuthService],
+    providers: [AuthGuard, CasosService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
