@@ -94,17 +94,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var CasosListComponent = /** @class */ (function () {
     function CasosListComponent(casosService) {
         this.casosService = casosService;
-        this.filterQuery = '';
-        this.rowsOnPage = 5;
-        this.sortBy = 'caso_numcaso';
-        this.sortOrder = 'asc';
         this.casosli = [];
     }
     CasosListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.casosService.getCasos().subscribe(function (res) {
             _this.casosli = res;
-            console.log(res);
         }, function (err) { return console.error(err); });
     };
     CasosListComponent = __decorate([

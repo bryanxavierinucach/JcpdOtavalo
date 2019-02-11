@@ -50,7 +50,7 @@ var DashboardRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <iframe id=\"otapag\" name=\"paginaotavalo\" title=\"Otavalo\" width=\"1100px\" height=\"620px\" frameborder=\"0\" scrolling=\"yes\" marginheight=\"0\" marginwidth=\"0\" src=\"http://www.otavalo.gob.ec\">\n    </iframe>\n</div>"
+module.exports = "<div>\n    <iframe id=\"otapag\" name=\"paginaotavalo\" title=\"Otavalo\" width=\"1100px\" height=\"620px\" frameborder=\"0\" scrolling=\"yes\" marginheight=\"0\" marginwidth=\"0\" src=\"http://www.otavalo.gob.ec/direcciones/consejo-cantonal-de-proteccion-de-derechos/presentacion.html\">\n    </iframe>\n</div>"
 
 /***/ }),
 

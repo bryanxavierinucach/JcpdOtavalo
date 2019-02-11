@@ -131,7 +131,6 @@ var routes = [
     { path: 'error', loadChildren: './server-error/server-error.module#ServerErrorModule' },
     { path: 'access-denied', loadChildren: './access-denied/access-denied.module#AccessDeniedModule' },
     { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
-    { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
     { path: '**', redirectTo: 'not-found' }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -182,7 +181,9 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _providers_electron_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./providers/electron.service */ "./src/app/providers/electron.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -193,18 +194,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(electronService) {
+        this.electronService = electronService;
+        console.log('AppConfig', _environments_environment__WEBPACK_IMPORTED_MODULE_2__["AppConfig"]);
+        if (electronService.isElectron()) {
+            console.log('Mode electron');
+            console.log('Electron ipcRenderer', electronService.ipcRenderer);
+            console.log('NodeJS childProcess', electronService.childProcess);
+        }
+        else {
+            console.log('Mode web');
+        }
     }
     AppComponent.prototype.ngOnInit = function () {
     };
     AppComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_providers_electron_service__WEBPACK_IMPORTED_MODULE_0__["ElectronService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -232,11 +245,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared */ "./src/app/shared/index.ts");
 /* harmony import */ var _services_casos_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/casos.service */ "./src/app/services/casos.service.ts");
-/* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
-/* harmony import */ var _user_login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user/login/login.component */ "./src/app/user/login/login.component.ts");
-/* harmony import */ var _user_register_register_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user/register/register.component */ "./src/app/user/register/register.component.ts");
-/* harmony import */ var _user_profile_profile_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user/profile/profile.component */ "./src/app/user/profile/profile.component.ts");
-/* harmony import */ var _user_page404_page404_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./user/page404/page404.component */ "./src/app/user/page404/page404.component.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _providers_electron_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./providers/electron.service */ "./src/app/providers/electron.service.ts");
+/* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
+/* harmony import */ var _user_login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user/login/login.component */ "./src/app/user/login/login.component.ts");
+/* harmony import */ var _user_register_register_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./user/register/register.component */ "./src/app/user/register/register.component.ts");
+/* harmony import */ var _user_profile_profile_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./user/profile/profile.component */ "./src/app/user/profile/profile.component.ts");
+/* harmony import */ var _user_page404_page404_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./user/page404/page404.component */ "./src/app/user/page404/page404.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -253,13 +268,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 // SERVICIOS DE LA APLICACION JCPD
 
+
+// NG Translate
+
 // NGX-PAGINATION.--- ESTO NOS VA A SERVIR PARA LA PAGINACION
 
 
 
 
 
-// AoT requires an exported function for factories
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -270,15 +287,102 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
-                ngx_pagination__WEBPACK_IMPORTED_MODULE_9__["NgxPaginationModule"],
+                ngx_pagination__WEBPACK_IMPORTED_MODULE_11__["NgxPaginationModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]
             ],
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"], _user_login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"], _user_register_register_component__WEBPACK_IMPORTED_MODULE_11__["RegisterComponent"], _user_profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _user_page404_page404_component__WEBPACK_IMPORTED_MODULE_13__["Page404Component"]],
-            providers: [_shared__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"], _services_casos_service__WEBPACK_IMPORTED_MODULE_8__["CasosService"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"], _user_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _user_register_register_component__WEBPACK_IMPORTED_MODULE_13__["RegisterComponent"], _user_profile_profile_component__WEBPACK_IMPORTED_MODULE_14__["ProfileComponent"], _user_page404_page404_component__WEBPACK_IMPORTED_MODULE_15__["Page404Component"]],
+            providers: [_providers_electron_service__WEBPACK_IMPORTED_MODULE_10__["ElectronService"], _shared__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"], _services_casos_service__WEBPACK_IMPORTED_MODULE_8__["CasosService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_9__["AuthService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/providers/electron.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/providers/electron.service.ts ***!
+  \***********************************************/
+/*! exports provided: ElectronService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ElectronService", function() { return ElectronService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ElectronService = /** @class */ (function () {
+    function ElectronService() {
+        this.isElectron = function () {
+            return window && window.process && window.process.type;
+        };
+        // Conditional imports
+        if (this.isElectron()) {
+            this.ipcRenderer = window.require('electron').ipcRenderer;
+            this.webFrame = window.require('electron').webFrame;
+            this.remote = window.require('electron').remote;
+            this.childProcess = window.require('child_process');
+            this.fs = window.require('fs');
+        }
+    }
+    ElectronService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], ElectronService);
+    return ElectronService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/auth.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/auth.service.ts ***!
+  \******************************************/
+/*! exports provided: AuthService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AuthService = /** @class */ (function () {
+    function AuthService(http) {
+        this.http = http;
+        this.API_URI = '';
+    }
+    AuthService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], AuthService);
+    return AuthService;
 }());
 
 
@@ -297,6 +401,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CasosService", function() { return CasosService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth.service */ "./src/app/services/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -308,9 +413,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var CasosService = /** @class */ (function () {
-    function CasosService(http) {
+    function CasosService(http, authService) {
         this.http = http;
+        this.authService = authService;
         // Coneccion al servidor de NODE, DONDE TENEMOS LA BASE DE DATOS
         this.API_URI = 'http://localhost:3000/api';
     }
@@ -333,7 +440,7 @@ var CasosService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
     ], CasosService);
     return CasosService;
 }());
@@ -983,26 +1090,16 @@ var RegisterComponent = /** @class */ (function () {
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
   \*****************************************/
-/*! exports provided: environment */
+/*! exports provided: AppConfig */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-var environment = {
-    production: false
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppConfig", function() { return AppConfig; });
+var AppConfig = {
+    production: false,
+    environment: 'LOCAL'
 };
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
@@ -1024,10 +1121,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["AppConfig"].production) {
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])()
+    .bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"], {
+    preserveWhitespaces: false
+})
     .catch(function (err) { return console.error(err); });
 
 
