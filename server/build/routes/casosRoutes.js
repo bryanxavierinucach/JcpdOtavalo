@@ -15,7 +15,7 @@ class CasosRoutes {
         this.router.get('/:id', casosController_1.default.getOne);
         this.router.post('/', casosController_1.default.create);
         this.router.put('/:id', casosController_1.default.update);
-        this.router.delete('/', casosController_1.default.listproco);
+        this.router.delete('/:id', casosController_1.default.delete);
     }
 }
 const casosRoutes = new CasosRoutes();

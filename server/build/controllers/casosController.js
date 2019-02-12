@@ -36,7 +36,7 @@ class CasosController {
     getOnePro(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const proco = yield database_1.default.query('SELECT * FROM t_procesamiento_conocimiento WHERE proco_id = ? ', [id]);
+            const proco = yield database_1.default.query('SELECT proco_id, proco_nombre FROM t_procesamiento_conocimiento WHERE proco_id = ? ', [id]);
             if (proco.length > 0) {
                 return res.json(proco[0]);
             }
@@ -56,17 +56,19 @@ class CasosController {
             res.json({ message: 'Creando un caso' });
         });
     }
+    update(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            yield database_1.default.query('UPDATE t_casos set ? WHERE caso_id = ?', [req.body, id]);
+            res.json({ message: 'El caso fue Actualizando' + req.params.id });
+        });
+    }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
             yield database_1.default.query('DELETE FROM t_casos WHERE caso_id = ?', [id]);
             res.json({ message: 'El juego ha sido eliminado' });
         });
-    }
-    update(req, res) {
-        const { id } = req.params;
-        database_1.default.query('UPDATE t_casos set ? WHERE caso_id ?', [req.body, id]);
-        res.json({ message: 'El caso fue Actualizando' + req.params.id });
     }
 }
 exports.casosController = new CasosController();

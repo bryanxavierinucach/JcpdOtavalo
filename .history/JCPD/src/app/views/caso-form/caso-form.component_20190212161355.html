@@ -1,0 +1,88 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Registro de Casos'" [icon]="'fa-edit'"></app-page-header>
+    <div class="container">
+
+        <div class="row">
+            <div class="col col-xl-10 col-lg-10">
+                <div class="card-header " align=center> DATOS DEL CASO</div>
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+
+                            <div class="form-group">
+                                <input type="text" name="proco_id" [(ngModel)]="caso.proco_id" placeholder="proco_id" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="tda_id" [(ngModel)]="caso.tda_id" placeholder="tda_id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="dav_id" [(ngModel)]="caso.dav_id" placeholder="dav_id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="tdenun_id" [(ngModel)]="caso.tdenun_id" placeholder="tdenun_id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso_numcaso" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="caso_motivo" [(ngModel)]="caso.caso_motivo" placeholder="caso_motivo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="caso_observaciones" [(ngModel)]="caso.caso_observaciones" placeholder="caso_observaciones" class="form-control">
+                            </div>
+                            <label>Fecha de Registro: </label>
+                            <div class="form-group">
+                                <form class="form-inline mb-3">
+                                    <div class="input-group datepicker-input">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" [(ngModel)]="caso.caso_fechareg" name="caso_fechareg" ngbDatepicker #d="ngbDatepicker"> <button class="input-group-addon" (click)="d.toggle()" type="button"> <span class="fa fa-calendar"></span> </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="caso_fechaingreso" [(ngModel)]="caso.caso_fechaingreso" placeholder="caso_fechaingreso" class="form-control">
+                                <label>Fecha de Ingreso: </label>
+                                <form class="form-inline mb-3">
+                                    <div class="form-group">
+                                        <div class="input-group datepicker-input">
+                                            <input ctype="text" placeholder="yyyy-mm-dd" name="caso_fechaingreso" [(ngModel)]="caso.caso_fechaingreso" class="form-control" ngbDatepicker #e="ngbDatepicker">
+                                            <button class="input-group-addon" (click)="e.toggle()" type="button">
+                                                                        <!-- <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+                                                                        <span class="fa fa-calendar"></span>
+                                                                    </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <button class="btn btn-success btn-block" (click)="saveNewCaso()"> Save</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header "> DATOS DEL DERECHO AMENAZADO O VIOLENTADO</div>
+
+
+
+
+
+
+
+
+                </div>
+
+                <button type="button" class="btn btn-primary">Guardar</button>
+                <div class="card mb-3">
+                    <div class="card-header "> DATOS DE CASO INGRESADO</div>
+                    <div class="container">
+
+
+                    </div>
+                    <!-- Aqui Cierra el container-->
+
+                </div>
+                <!-- Aqui se cierra la clase del div de derechos amenazados violentados-->
+            </div>
+        </div>
+    </div>
+</div>

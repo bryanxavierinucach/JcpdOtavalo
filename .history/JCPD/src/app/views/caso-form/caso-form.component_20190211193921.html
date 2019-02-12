@@ -1,0 +1,55 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Registro de Casos'" [icon]="'fa-edit'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-10 col-lg-15">
+            <div class="card mb-3">
+                <div class="card-header "> DATOS DEL CASO</div>
+
+            </div>
+            <div class="card mb-3">
+                <div class="card-header "> DATOS DEL DERECHO AMENAZADO O VIOLENTADO</div>
+                <div class="container">
+                    <br/>
+                    <fieldset class="form-group">
+
+                        <label> <b>Derecho Amenazado o violentado: </b> </label>&nbsp;
+
+                        <label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked=""> Radio 1
+                            </label>&nbsp;
+                        <label> <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Radio 2
+                            </label>
+
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label><b>Clasificacion del Derecho Amenazado o Violentado </b></label>
+                        <div class="radio">
+                            <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked=""> Radio 1
+                                                </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Radio 2
+                                                </label>
+                        </div>
+                    </fieldset>
+
+                </div>
+                <!-- Aqui Cierra el container-->
+
+            </div>
+            <!-- Aqui se cierra la clase del div de derechos amenazados violentados-->
+            <button type="button" class="btn btn-primary">Guardar</button>
+            <div class="card mb-3">
+                <div class="card-header "> DATOS DE CASO INGRESADO</div>
+                <div class="container">
+
+
+                </div>
+                <!-- Aqui Cierra el container-->
+
+            </div>
+            <!-- Aqui se cierra la clase del div de derechos amenazados violentados-->
+        </div>
+    </div>
+</div>

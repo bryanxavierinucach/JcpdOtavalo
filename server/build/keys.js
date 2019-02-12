@@ -5,6 +5,6 @@ exports.default = {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'jcpd'
+        database: 'bdd_jcpd'
     }
 };

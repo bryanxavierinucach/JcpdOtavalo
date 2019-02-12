@@ -1,0 +1,58 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Registro de Casos'" [icon]="'fa-edit'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-10 col-lg-15">
+            <div class="card mb-3">
+                <div class="card-header " align=center> DATOS DEL CASO</div>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" name="title" [(ngModel)]="game.title" placeholder="Title" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="description" [(ngModel)]="game.description" rows="2" placeholder="Description" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="url" name="image URL" [(ngModel)]="game.image" placeholder="Image" class="form-control">
+                            </div>
+                            <button class="btn btn-success btn-block" (click)="edit ? updateGame() : saveNewGame()">
+                              Save
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+            <div class="card mb-3">
+                <div class="card-header "> DATOS DEL DERECHO AMENAZADO O VIOLENTADO</div>
+
+
+
+
+
+
+
+
+            </div>
+
+            <button type="button" class="btn btn-primary">Guardar</button>
+            <div class="card mb-3">
+                <div class="card-header "> DATOS DE CASO INGRESADO</div>
+                <div class="container">
+
+
+                </div>
+                <!-- Aqui Cierra el container-->
+
+            </div>
+            <!-- Aqui se cierra la clase del div de derechos amenazados violentados-->
+        </div>
+    </div>
+</div>
