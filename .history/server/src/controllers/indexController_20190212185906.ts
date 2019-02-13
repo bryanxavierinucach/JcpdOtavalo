@@ -5,12 +5,10 @@ class IndexController{
         res.json([
             
             {text: 'API is in /api/users'},
-            {text: 'API is in /api/casos'},
-            {text: 'API is in /api/anc'}
-
+            {text: 'API is in /api/users'}
         
-        ])
-      
+        ]),
+        res.json()
 
     }
 }

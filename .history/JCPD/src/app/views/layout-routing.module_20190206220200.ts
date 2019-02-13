@@ -10,7 +10,13 @@ const routes: Routes = [
             { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'caso-form', loadChildren: './caso-form/caso-form.module#CasoModule' },
-            { path: 'casos-list', loadChildren: './casos-list/casos-list.module#CasosModule' }
+            { path: 'casos-list', loadChildren: './casos-list/casos-list.module#CasosModule' },
+            { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
+            { path: 'forms', loadChildren: './form/form.module#FormModule' },
+            { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
+            { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
+            { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
+
         ]
     }
 ];

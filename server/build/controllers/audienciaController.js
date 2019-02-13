@@ -28,7 +28,7 @@ class CasosController {
             if (casos.length > 0) {
                 return res.json(casos[0]);
             }
-            res.status(404).json({ text: "el caso no existe" });
+            res.status(404).json({ text: "el juego no existe" });
             //res.json({text:'listando un caso'+ req.params.id});
         });
     }
@@ -67,7 +67,7 @@ class CasosController {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
             yield database_1.default.query('DELETE FROM t_casos WHERE caso_id = ?', [id]);
-            res.json({ message: 'El caso ha sido eliminado' });
+            res.json({ message: 'El juego ha sido eliminado' });
         });
     }
 }

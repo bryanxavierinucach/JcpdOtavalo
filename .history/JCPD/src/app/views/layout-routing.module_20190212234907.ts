@@ -10,7 +10,9 @@ const routes: Routes = [
             { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'caso-form', loadChildren: './caso-form/caso-form.module#CasoModule' },
-            { path: 'casos-list', loadChildren: './casos-list/casos-list.module#CasosModule' }
+            { path: 'casos-list', loadChildren: './casos-list/casos-list.module#CasosModule' },
+            { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
+
         ]
     }
 ];
