@@ -11,6 +11,10 @@ const casosRoutes_1 = __importDefault(require("./routes/casosRoutes"));
 const usersRoutes_1 = __importDefault(require("./routes/usersRoutes"));
 const procoRoutes_1 = __importDefault(require("./routes/procoRoutes"));
 const analisisCasosRoutes_1 = __importDefault(require("./routes/analisisCasosRoutes"));
+const audienciaRoutes_1 = __importDefault(require("./routes/audienciaRoutes"));
+const auditoriaRoutes_1 = __importDefault(require("./routes/auditoriaRoutes"));
+const avocatoriaRoutes_1 = __importDefault(require("./routes/avocatoriaRoutes"));
+const cantonesRoutes_1 = __importDefault(require("./routes/cantonesRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -30,6 +34,11 @@ class Server {
         this.app.use('/api/casos', casosRoutes_1.default);
         this.app.use('/api/proco', procoRoutes_1.default);
         this.app.use('/api/anc', analisisCasosRoutes_1.default);
+        this.app.use('/api/audiencias', audienciaRoutes_1.default);
+        this.app.use('/api/audiprubas', audienciaRoutes_1.default);
+        this.app.use('/api/auditorias', auditoriaRoutes_1.default);
+        this.app.use('/api/avocatorias', avocatoriaRoutes_1.default);
+        this.app.use('/api/cantones', cantonesRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

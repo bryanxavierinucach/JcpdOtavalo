@@ -13,6 +13,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
 class ProcoController {
+    getAll(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const proco = yield database_1.default.query('SELECT * FROM t_procesamiento_conocimiento  ');
+            res.json(proco);
+        });
+    }
     // Listar un procesamiento de conocimiento
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {

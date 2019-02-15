@@ -12,64 +12,45 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class CasosController {
-    // Listar todos los casos
+class AudienciaController {
+    // Listar todos los audiencia
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const casos = yield database_1.default.query('SELECT * FROM t_casos');
-            res.json(casos);
+            const audiencia = yield database_1.default.query('SELECT * FROM t_audiencia');
+            res.json(audiencia);
         });
     }
     //Listar solo un afectado por el ID
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const casos = yield database_1.default.query('SELECT * FROM t_casos WHERE caso_id = ? ', [id]);
-            if (casos.length > 0) {
-                return res.json(casos[0]);
+            const audiencia = yield database_1.default.query('SELECT * FROM t_audiencia WHERE rau_id = ? ', [id]);
+            if (audiencia.length > 0) {
+                return res.json(audiencia[0]);
             }
             res.status(404).json({ text: "el juego no existe" });
-            //res.json({text:'listando un caso'+ req.params.id});
-        });
-    }
-    // Listar un procesamiento de conocimiento
-    getOnePro(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const proco = yield database_1.default.query('SELECT proco_id, proco_nombre FROM t_procesamiento_conocimiento WHERE proco_id = ? ', [id]);
-            if (proco.length > 0) {
-                return res.json(proco[0]);
-            }
-            res.status(404).json({ text: "el procesamiento no existe" });
-            //res.json({text:'listando un caso'+ req.params.id});
-        });
-    }
-    listproco(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const proco = yield database_1.default.query('SELECT * FROM t_procesamiento_conocimiento');
-            res.json(proco);
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO t_casos set ?', [req.body]);
-            res.json({ message: 'Creando un caso' });
+            yield database_1.default.query('INSERT INTO t_audiencia set ?', [req.body]);
+            res.json({ message: 'Creando una audiencia' });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE t_casos set ? WHERE caso_id = ?', [req.body, id]);
-            res.json({ message: 'El caso fue Actualizando' + req.params.id });
+            yield database_1.default.query('UPDATE t_audiencia set ? WHERE rau_id = ?', [req.body, id]);
+            res.json({ message: 'La audiencia fue Actualizando' + req.params.id });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM t_casos WHERE caso_id = ?', [id]);
-            res.json({ message: 'El juego ha sido eliminado' });
+            yield database_1.default.query('DELETE FROM t_audiencia WHERE rau_id = ?', [id]);
+            res.json({ message: 'La audiencia ha sido eliminado' });
         });
     }
 }
-exports.casosController = new CasosController();
-exports.default = exports.casosController;
+exports.audienciaController = new AudienciaController();
+exports.default = exports.audienciaController;

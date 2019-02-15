@@ -12,6 +12,7 @@ class ProcoRoutes {
     }
     config() {
         this.router.get('/:id', procoController_1.default.getOne);
+        this.router.get('/', procoController_1.default.getAll);
     }
 }
 const procoRoutes = new ProcoRoutes();
