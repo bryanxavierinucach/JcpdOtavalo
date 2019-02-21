@@ -20,7 +20,7 @@ class AuditoriaController {
             res.json(auditoria);
         });
     }
-    //Listar solo un afectado por el ID
+    //Listar solo un auditoria por el ID
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
@@ -31,12 +31,14 @@ class AuditoriaController {
             res.status(404).json({ text: "la auditoria no existe" });
         });
     }
+    //Crear una auditoria
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO t_auditoria set ?', [req.body]);
             res.json({ message: 'Creando una auditoria' });
         });
     }
+    //Actualizar una auditoria por el ID
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
@@ -44,6 +46,7 @@ class AuditoriaController {
             res.json({ message: 'La auditoria fue Actualizando' + req.params.id });
         });
     }
+    // Eliminar una auditoria por el ID
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;

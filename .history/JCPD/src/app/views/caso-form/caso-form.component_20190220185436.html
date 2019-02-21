@@ -1,0 +1,46 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Registro de Casos'" [icon]="'fa-edit'"></app-page-header>
+    <div class="container">
+
+        <div class="row">
+            <div class="col col-xl-10 col-lg-10">
+                <div class="card-header " align=center> DATOS DEL CASO </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <label>Número de Caso:</label>
+                            <div class="form-group">
+                                <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso#/cedula" class="form-control">
+                            </div>
+                            <label>Procedimiento con Conocimientos:</label>
+                            <div class="form-group">
+                                <select id='proco_id' name='proco' [(ngModel)]="caso.proco_id" class='form-control'>
+                                        <option *ngFor="let proco of proco" [value]="proco.proco_id">{{proco.proco_nombre}}
+                                        </option>
+                                    </select>
+
+                            </div>
+
+
+
+
+                        </form>
+
+
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header "> INGRESO DE DATOS CASO </div>
+                    <div class="container"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -16,19 +16,19 @@ class AnalsisCasosController {
     // Listar todos los casos
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const casos = yield database_1.default.query('SELECT * FROM t_analisis_casos');
-            res.json(casos);
+            const analisiscasos = yield database_1.default.query('SELECT * FROM t_analisis_casos');
+            res.json(analisiscasos);
         });
     }
     //Listar solo un afectado por el ID
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const casos = yield database_1.default.query('SELECT * FROM t_analisis_casos WHERE anc_id = ? ', [id]);
-            if (casos.length > 0) {
-                return res.json(casos[0]);
+            const analisiscasos = yield database_1.default.query('SELECT * FROM t_analisis_casos WHERE anc_id = ? ', [id]);
+            if (analisiscasos.length > 0) {
+                return res.json(analisiscasos[0]);
             }
-            res.status(404).json({ text: "el juego no existe" });
+            res.status(404).json({ text: "el analisiscasos no existe" });
             //res.json({text:'listando un caso'+ req.params.id});
         });
     }
@@ -42,14 +42,14 @@ class AnalsisCasosController {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
             yield database_1.default.query('UPDATE t_analisis_casos set ? WHERE anc_id = ?', [req.body, id]);
-            res.json({ message: 'El analisis fue Actualizando' + req.params.id });
+            res.json({ message: 'El analisiscasos fue Actualizando' + req.params.id });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
             yield database_1.default.query('DELETE FROM t_analisis_casos WHERE anc_id = ?', [id]);
-            res.json({ message: 'El anc ha sido eliminado' });
+            res.json({ message: 'El analisiscasos ha sido eliminado' });
         });
     }
 }

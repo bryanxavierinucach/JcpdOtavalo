@@ -17,7 +17,7 @@ class AfectadoController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const afectado = yield database_1.default.query('SELECT * FROM t_datosafectado');
-            res.json({ afectado });
+            res.json(afectado);
         });
     }
     //Listar solo un afectado por el ID

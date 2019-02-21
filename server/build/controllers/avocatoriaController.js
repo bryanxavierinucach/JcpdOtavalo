@@ -20,7 +20,7 @@ class AvocatoriaController {
             res.json(avocatoria);
         });
     }
-    //Listar solo un afectado por el ID
+    //Listar solo un avocatoria por el ID
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
@@ -28,15 +28,17 @@ class AvocatoriaController {
             if (avocatoria.length > 0) {
                 return res.json(avocatoria[0]);
             }
-            res.status(404).json({ text: "el juego no existe" });
+            res.status(404).json({ text: "la avocatoria no existe" });
         });
     }
+    //Crear una avocatoria
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO t_avocatoria set ?', [req.body]);
             res.json({ message: 'Creando una avocatoria' });
         });
     }
+    // Actualizar una avocatoria por ID
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
@@ -44,6 +46,7 @@ class AvocatoriaController {
             res.json({ message: 'La avocatoria fue Actualizando' + req.params.id });
         });
     }
+    // Eliminar una avocatoria por ID
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;

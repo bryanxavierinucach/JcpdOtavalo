@@ -32,30 +32,14 @@ class CasosController {
             //res.json({text:'listando un caso'+ req.params.id});
         });
     }
-    // Listar un procesamiento de conocimiento
-    getOnePro(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const proco = yield database_1.default.query('SELECT proco_id, proco_nombre FROM t_procesamiento_conocimiento WHERE proco_id = ? ', [id]);
-            if (proco.length > 0) {
-                return res.json(proco[0]);
-            }
-            res.status(404).json({ text: "el procesamiento no existe" });
-            //res.json({text:'listando un caso'+ req.params.id});
-        });
-    }
-    listproco(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const proco = yield database_1.default.query('SELECT * FROM t_procesamiento_conocimiento');
-            res.json(proco);
-        });
-    }
+    // Crear un nuevo Caso 
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO t_casos set ?', [req.body]);
             res.json({ message: 'Creando un caso' });
         });
     }
+    //Actualizar un  Caso por el ID
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
@@ -63,6 +47,7 @@ class CasosController {
             res.json({ message: 'El caso fue Actualizando' + req.params.id });
         });
     }
+    // Eliminar un caso por el ID
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;

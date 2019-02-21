@@ -20,7 +20,7 @@ class AudienciaPuebaController {
             res.json(audienciaprueba);
         });
     }
-    //Listar solo un afectado por el ID
+    //Listar solo un audienciaprueba por el ID
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
@@ -31,12 +31,14 @@ class AudienciaPuebaController {
             res.status(404).json({ text: "la audienciaprueba no existe" });
         });
     }
+    //Crear una audienciaPrueba
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO t_audienciaprueba set ?', [req.body]);
             res.json({ message: 'Creando una audienciaprueba' });
         });
     }
+    //Actualizar la AudienciaPrueba
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
@@ -44,6 +46,7 @@ class AudienciaPuebaController {
             res.json({ message: 'La audienciaprueba fue Actualizando' + req.params.id });
         });
     }
+    //Eliminar la AudienciaPrueba
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;

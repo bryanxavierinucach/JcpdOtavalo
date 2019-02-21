@@ -13,9 +13,6 @@ class CantonesRoutes {
     config() {
         this.router.get('/', cantonesController_1.default.list);
         this.router.get('/:id', cantonesController_1.default.getOne);
-        this.router.post('/', cantonesController_1.default.create);
-        this.router.put('/:id', cantonesController_1.default.update);
-        this.router.delete('/:id', cantonesController_1.default.delete);
     }
 }
 const cantonesRoutes = new CantonesRoutes();

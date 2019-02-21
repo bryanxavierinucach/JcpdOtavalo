@@ -20,7 +20,7 @@ class CantonesController {
             res.json(cantones);
         });
     }
-    //Listar solo un afectado por el ID
+    //Listar solo un CANTON por el ID
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
@@ -28,27 +28,7 @@ class CantonesController {
             if (cantones.length > 0) {
                 return res.json(cantones[0]);
             }
-            res.status(404).json({ text: "el juego no existe" });
-        });
-    }
-    create(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO t_cantones set ?', [req.body]);
-            res.json({ message: 'Creando una cantones' });
-        });
-    }
-    update(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            yield database_1.default.query('UPDATE t_cantones set ? WHERE can_id = ?', [req.body, id]);
-            res.json({ message: 'La cantones fue Actualizando' + req.params.id });
-        });
-    }
-    delete(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            yield database_1.default.query('DELETE FROM t_cantones WHERE can_id = ?', [id]);
-            res.json({ message: 'La cantones ha sido eliminado' });
+            res.status(404).json({ text: "el CANTÓN no existe" });
         });
     }
 }
