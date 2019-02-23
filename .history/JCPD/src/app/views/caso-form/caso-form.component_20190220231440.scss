@@ -1,0 +1,24 @@
+@charset "UTF-8";
+* {
+    padding: 500;
+    margin: 100;
+}
+
+.contenedor-modal {
+    position: medium;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.contenedor-modal button {
+    position: medium;
+    top: 50%;
+}
+
+
+/*Cambio de tamaño a los container*/
+
+.container-fluid {
+    max-height: 400px;
+}

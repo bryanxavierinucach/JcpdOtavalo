@@ -1,0 +1,116 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Registro de Casos'" [icon]="'fa-edit'"></app-page-header>
+    <div class="container">
+
+        <div class="row">
+            <div class="col col-xl-10 col-lg-10">
+                <div class="card-header " align=center> DATOS DEL CASO </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <label>Número de Caso:</label>
+                            <div class="form-group">
+                                <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso#/cedula" class="form-control">
+                            </div>
+
+                            <label>Procedimiento con Conocimientos:</label>
+                            <div class="form-group">
+                                <select id='proco_id' name='proco' [(ngModel)]="caso.proco_id" class='form-control'>
+                                        <option *ngFor="let proco of proco" [value]="proco.proco_id">{{proco.proco_nombre}}
+                                        </option>
+                                </select>
+                            </div>
+
+                            <label>Tipo de denuncia: </label>
+                            <div class="form-group">
+                                <select id='tdenun_id' name="tipoDenuncia" [(ngModel)]="caso.tdenun_id" class='form-control'>
+    
+                                        <option *ngFor="let tipoDenuncia of tdenun" [value]="tipoDenuncia.tdenun_id">
+                                            {{tipoDenuncia.tdenun_nombre}}</option>
+                                    </select>
+                            </div>
+
+                            <label>Motivo:</label>
+                            <div class="form-group">
+                                <textarea type="text" id="Motivo" name="caso_motivo" [(ngModel)]="caso.caso_motivo" placeholder="Motivo" class="form-control" rows="4"></textarea>
+                            </div>
+
+                            <label>Observaciones:</label>
+                            <div class="form-group">
+                                <textarea type="text" id="Observaciones" name="caso_observaciones" [(ngModel)]="caso.caso_observaciones" placeholder="Observaciones" class="form-control" rows="4"> </textarea>
+                            </div>
+
+
+                            <label>Fecha de Registro: </label>
+                            <div class="form-group">
+                                <form class="form-inline mb-3">
+                                    <div class="input-group datepicker-input">
+                                        <input type="text" class="form-control" placeholder="yyyy-mm-dd" [(ngModel)]="caso.caso_fechareg" name="caso_fechareg" ngbDatepicker #d="ngbDatepicker"> <button class="input-group-addon" (click)="d.toggle()" type="button"> <span class="fa fa-calendar"></span> </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <label>Fecha de Ingreso: </label>
+                            <div class="form-group">
+                                <form class="form-inline mb-3">
+                                    <div class="form-group">
+                                        <div class="input-group datepicker-input">
+                                            <input type="text" placeholder="yyyy-mm-dd" name="caso_fechaingreso" [(ngModel)]="caso.caso_fechaingreso" class="form-control" ngbDatepicker #e="ngbDatepicker"> <button class="input-group-addon" (click)="e.toggle()"
+                                                type="button"><span class="fa fa-calendar"></span> </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card mb-3">
+                                <div class="card-header " align=center> DATOS DEL DERECHO AMENAZADO O VIOLENTADO</div>
+                                <label> Derecho amenazado o violentado:	 </label>
+                                <div class="form-group">
+                                    <select id='dav_id' name="dav_id" [(ngModel)]="caso.dav_id" class='form-control'>
+                                            <option *ngFor="let ttda of ttda" [value]="ttda.dav_id">{{ttda.dav_nombre}}</option>
+                                        </select>
+                                </div>
+                                <label>Clasificacion del Derecho amenazado o violentado:	</label>
+                                <div class="form-group">
+                                    <select id='tda_id' name="tipoderechoA" [(ngModel)]="caso.tda_id" class='form-control'>
+                                            <option *ngFor="let tipoderechoA of tda" [value]="tipoderechoA.tda_id">{{tipoderechoA.tda_nombre}}</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <button class="btn btn-success btn-block" (click)="saveNewCaso()"> Save </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header "> INGRESO DE DATOS CASO </div>
+                    <div class="container"></div>
+                    <div class="contenedor-modal">
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#miModal">Abrir modal</button>
+                    </div>
+
+
+                    <!-- /////////////////////////INGRESO DE DATOS AFECTADO/////////////////////////////////// -->
+
+                    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header" mb-2 bg-primary text-white ">
+                                    <a>  INGRESAR DATOS DEL AFECTADO </a>
+                                </div>
+                                <div class="modal-footer ">
+                                    <button type="button " class="btn btn-secondary " data-dismiss="modal ">Cerrar</button> ASDASDSA
+                                </div>
+                                <label for=" ">asdasdsa</label>
+                                <div>asdasdasxs</div>
+                                <div class="modal-footer "></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

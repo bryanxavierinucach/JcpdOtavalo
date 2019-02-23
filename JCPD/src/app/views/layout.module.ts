@@ -6,15 +6,15 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { VerCasoComponent } from './ver-caso/ver-caso.component';
+
 
 @NgModule({
     imports: [
         CommonModule,
         LayoutRoutingModule,
-        NgbDropdownModule,
-        NgxPaginationModule
+        NgbDropdownModule
         ],
-    declarations: [LayoutComponent, SidebarComponent, HeaderComponent]
+    declarations: [LayoutComponent, SidebarComponent, HeaderComponent, VerCasoComponent]
 })
 export class LayoutModule {}
