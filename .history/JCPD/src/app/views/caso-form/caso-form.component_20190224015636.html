@@ -40,13 +40,13 @@
                                     Procedimiento con Conocimientos:
                                 </b></label>
 
-                                <select id='proco_id' name='proco_id' [(ngModel)]="caso.proco_id" class='form-control' ngModel required>
+                                <select id='proco_id' name='proco_id' [(ngModel)]="caso.proco_id" class='form-control' formControlName="proco_id" required>
                                         <option *ngFor="let proco of proco" [value]="proco.proco_id" >
                                             {{proco.proco_nombre}}
                                         </option>
                                 </select>
                                 <div *ngIf="proco_id.invalid && (proco_id.dirty || proco_id.touched)" class="alert alert-danger">
-                                    <div *ngIf="proco_id.errors">
+                                    <div *ngIf="">
                                         Name is required.
                                     </div>
                                 </div>

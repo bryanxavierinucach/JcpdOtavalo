@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Caso } from '../../models/Caso';
 import { CasosService } from '../../services/casos.service';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-caso-form',
@@ -25,13 +25,14 @@ export class CasoFormComponent implements OnInit {
     caso_fechareg: new Date(),
     caso_fechaingreso: new Date()
   };
+
   // edit: boolean = false;
   proco: any = [];
   tdenun: any = [];
   tda: any = [];
   ttda: any = [];
   angForm: FormGroup;
-  nForm: FormGroup;
+
   constructor(private casosService: CasosService, private fb: FormBuilder) {
     this.createForm();
   }
@@ -49,11 +50,21 @@ export class CasoFormComponent implements OnInit {
 
     });
   }
-  ngOnInit()  {
-    this.nForm = new FormGroup({
-      'proco_id': new FormControl(this.caso.proco_id, Validators.required)
 
-    });
+  ngOnInit() {
+
+    // const params = this.activatedRoute.snapshot.params;
+    // if (params.id) {
+    //   this.gameService.getGame(params.id)
+    //     .subscribe(
+    //       res => {
+    //         console.log(res);
+    //         this.game = res;
+    //         this.edit = true;
+    //       },
+    //       err => console.log(err)
+    //     )
+    // }
 
 
     this.casosService.getProco().subscribe(
@@ -82,8 +93,6 @@ export class CasoFormComponent implements OnInit {
     );
 
   }
-  get proco_id() { return this.nForm.get('proco_id'); }
-
 
   saveNewCaso() {
     delete this.caso.caso_id;

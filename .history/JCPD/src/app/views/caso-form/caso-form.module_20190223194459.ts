@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-    imports: [NgbModule, CommonModule, CasoRoutingModule, PageHeaderModule, FormsModule, ReactiveFormsModule],
+    imports: [NgbModule, CommonModule, CasoRoutingModule, PageHeaderModule, FormsModule,ReactiveFormsModule],
     declarations: [CasoFormComponent]
 })
 export class CasoModule {}

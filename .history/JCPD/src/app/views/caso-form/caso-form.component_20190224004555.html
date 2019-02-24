@@ -18,66 +18,36 @@
                             <div class="form-group">
                                 <label> <b>Número de Caso:</b></label>
 
-                                <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso#/cedula" class="form-control" formControlName="caso_numcaso">
-                            </div>
-                            <div *ngIf="angForm.controls['caso_numcaso'].invalid && (angForm.controls['caso_numcaso'].dirty || angForm.controls['caso_numcaso'].touched)" class="alert alert-danger">
-                                <div *ngIf="angForm.controls['caso_numcaso'].errors.required">
-                                    Numero de caso is required.
-                                </div>
+                                <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso#/cedula" class="form-control" [ngModelOptions]="{standalone: true}">
                             </div>
 
 
+                            <div class="form-group">
+                                <label for="proco_id" class="control-label"><b>Procedimiento con Conocimientos:</b></label>
 
-
-
-
-
-
-
-
-                            <div class="form-group" [class.has-error]="proco_id.touched && proco_id.invalid">
-                                <label for="proco_id" class="control-label"><b>
-                                    Procedimiento con Conocimientos:
-                                </b></label>
-
-                                <select id='proco_id' name='proco_id' [(ngModel)]="caso.proco_id" class='form-control' ngModel required>
-                                        <option *ngFor="let proco of proco" [value]="proco.proco_id" >
+                                <select id='proco_id' name='proco_id' [(ngModel)]="caso.proco_id" class='form-control' [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let proco of proco" [value]="proco.proco_id">
                                             {{proco.proco_nombre}}
                                         </option>
                                 </select>
-                                <div *ngIf="proco_id.invalid && (proco_id.dirty || proco_id.touched)" class="alert alert-danger">
-                                    <div *ngIf="proco_id.errors">
-                                        Name is required.
-                                    </div>
-                                </div>
                             </div>
-
-
 
 
 
 
 
                             <label> <b>Tipo de denuncia: </b></label>
-                            <div class="form-group" [class.has-error]="tdenun_id.touched && tdenun_id.invalid">
-                                <select id='tdenun_id' name="tipoDenuncia" [(ngModel)]="caso.tdenun_id" class='form-control' required #tdenun_id="ngModel" [ngModelOptions]="{standalone: true}">
+                            <div class="form-group">
+                                <select id='tdenun_id' name="tipoDenuncia" [(ngModel)]="caso.tdenun_id" class='form-control' [ngModelOptions]="{standalone: true}">
     
                                         <option *ngFor="let tipoDenuncia of tdenun" [value]="tipoDenuncia.tdenun_id">
                                             {{tipoDenuncia.tdenun_nombre}}</option>
                                     </select>
-                                <span class="help-block" *ngIf="tdenun_id.touched && tdenun_id.invalid">
-                                            Se requiere escoger una opcion
-                                        </span>
                             </div>
 
                             <label><b>Motivo:</b></label>
                             <div class="form-group">
-                                <textarea type="text" id="Motivo" name="caso_motivo" [(ngModel)]="caso.caso_motivo" placeholder="Motivo" class="form-control" rows="4" formControlName="caso_motivo"></textarea>
-                            </div>
-                            <div *ngIf="angForm.controls['caso_motivo'].invalid && (angForm.controls['caso_motivo'].dirty || angForm.controls['caso_motivo'].touched)" class="alert alert-danger">
-                                <div *ngIf="angForm.controls['caso_motivo'].errors.required">
-                                    Numero de caso is required.
-                                </div>
+                                <textarea type="text" id="Motivo" name="caso_motivo" [(ngModel)]="caso.caso_motivo" placeholder="Motivo" class="form-control" rows="4" [ngModelOptions]="{standalone: true}"></textarea>
                             </div>
 
                             <label><b>Observaciones:</b></label>
@@ -86,15 +56,13 @@
                             </div>
 
 
-                            <div class="form-group col col-xl-3 ">
-                                <label for="caso_fechareg"><b>Fecha de Registro:</b> </label>
-
+                            <label for="caso_fechareg"><b>Fecha de Registro:</b> </label>
+                            <div class="form-group">
                                 <input type="date" id="caso_fechareg" [(ngModel)]="caso.caso_fechareg" name="caso_fechareg" class="form-control" [ngModelOptions]="{standalone: true}">
                             </div>
 
-                            <div class="form-group col-xl-3  ">
-                                <label><b>Fecha de Ingreso:</b> </label>
-
+                            <label><b>Fecha de Ingreso:</b> </label>
+                            <div class="form-group p-5">
                                 <input type="date" id="caso_fechaingreso" name="caso_fechaingreso" [(ngModel)]="caso.caso_fechaingreso" class="form-control" [ngModelOptions]="{standalone: true}">
                             </div>
 

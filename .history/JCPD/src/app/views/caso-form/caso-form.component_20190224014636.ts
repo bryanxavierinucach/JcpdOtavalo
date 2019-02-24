@@ -51,8 +51,10 @@ export class CasoFormComponent implements OnInit {
   }
   ngOnInit()  {
     this.nForm = new FormGroup({
-      'proco_id': new FormControl(this.caso.proco_id, Validators.required)
-
+      'proco_id': new FormControl(this.caso.proco_id, [
+        Validators.required,
+        Validators.minLength(4)
+            ])
     });
 
 

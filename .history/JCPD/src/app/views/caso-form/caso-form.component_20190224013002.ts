@@ -31,7 +31,6 @@ export class CasoFormComponent implements OnInit {
   tda: any = [];
   ttda: any = [];
   angForm: FormGroup;
-  nForm: FormGroup;
   constructor(private casosService: CasosService, private fb: FormBuilder) {
     this.createForm();
   }
@@ -49,12 +48,7 @@ export class CasoFormComponent implements OnInit {
 
     });
   }
-  ngOnInit()  {
-    this.nForm = new FormGroup({
-      'proco_id': new FormControl(this.caso.proco_id, Validators.required)
-
-    });
-
+  ngOnInit() {
 
     this.casosService.getProco().subscribe(
       res => {
@@ -82,8 +76,6 @@ export class CasoFormComponent implements OnInit {
     );
 
   }
-  get proco_id() { return this.nForm.get('proco_id'); }
-
 
   saveNewCaso() {
     delete this.caso.caso_id;

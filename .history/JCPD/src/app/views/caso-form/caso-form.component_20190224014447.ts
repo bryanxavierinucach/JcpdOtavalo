@@ -51,11 +51,12 @@ export class CasoFormComponent implements OnInit {
   }
   ngOnInit()  {
     this.nForm = new FormGroup({
-      'proco_id': new FormControl(this.caso.proco_id, Validators.required)
-
+      'proco_id': new FormControl(this.caso.proco_id, [
+        Validators.required,
+        Validators.minLength(4)
+            ])
     });
-
-
+  
     this.casosService.getProco().subscribe(
       res => {
         this.proco = res;
@@ -82,8 +83,6 @@ export class CasoFormComponent implements OnInit {
     );
 
   }
-  get proco_id() { return this.nForm.get('proco_id'); }
-
 
   saveNewCaso() {
     delete this.caso.caso_id;

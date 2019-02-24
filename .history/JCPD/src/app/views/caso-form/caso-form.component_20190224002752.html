@@ -1,0 +1,114 @@
+<div [@routerTransition]>
+    <div class="container">
+        <app-page-header [heading]="'Registro de Casos'" [icon]="'fa-edit'"></app-page-header>
+
+        <div class="row">
+            <div class="col col-xl-10 col-lg-10">
+                <div class="card-header " align=center> DATOS DEL CASO </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <!-- form para las validaciones  -->
+                        <form [formGroup]="angForm" novalidate *ngFor="let model of caso let i=index">
+                            <div [formGroup]="casosFormGroup">
+
+                                <label> <b>Número de Caso:</b></label>
+
+                                <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso#/cedula" class="form-control" name="caso_numcaso{{i}}">
+                            </div>
+
+                            <div class="formGroup">
+                                <button type="submit" class="btn btn-success btn-block" (click)="saveNewCaso()"> Save </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- BOTONES DE INGRESO DEMAS TABLAS RELACIONALES  -->
+
+
+                <div class="card mb-3">
+                    <div class="card-header "> INGRESO DE DATOS CASO </div>
+                    <div class="contenedor-modal">
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#miModal">AFECTADO</button> &nbsp;<br>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#miModal1">DENUNCIANTE</button>&nbsp;<br>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#miModal2">DENUNCIADO</button>&nbsp;
+
+                    </div>
+
+
+                    <!-- /////////////////////////INGRESO DE DATOS AFECTADO/////////////////////////////////// -->
+
+                    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col col-xl-15 col-lg-20">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="container">
+                                            <div class="modal-content">
+                                                <div class="modal-header  bg-primary text-white">
+                                                    <a>INGRESAR DATOS DEL AFECTADO</a>
+                                                </div>
+
+                                                <div class="modal-content p-5">
+                                                    <label for="numcaso">NUMERO DE CASO</label>
+                                                    <div>
+                                                        <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso#/cedula" class="form-control">
+
+                                                    </div>
+                                                    <label for="numcaso">NUMERO DE CASO</label>
+                                                    <div>
+                                                        <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso#/cedula" class="form-control">
+
+                                                    </div>
+                                                    <label for="numcaso">NUMERO DE CASO</label>
+                                                    <div>
+                                                        <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso#/cedula" class="form-control">
+
+                                                    </div>
+                                                    <label for="numcaso">NUMERO DE CASO</label>
+                                                    <div>
+                                                        <input type="text" name="caso_numcaso" [(ngModel)]="caso.caso_numcaso" placeholder="caso#/cedula" class="form-control">
+
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="modal-footer  bg-secondary text-white">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
