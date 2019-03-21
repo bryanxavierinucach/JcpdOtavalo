@@ -4,6 +4,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
+
         },
         proco_id: {
             type: Sequelize.INTEGER

@@ -8,7 +8,7 @@ module.exports = function(app) {
     const casos = require('../controller/casos.controller.js');
     const analisisCasos = require('../controller/analisis_casos.controller.js');
     const audiencia = require('../controller/audiencia.controller.js');
-
+    const proco = require('../controller/procesamientoConocimiento.controller.js');
 
     app.use(function(req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
@@ -61,6 +61,6 @@ module.exports = function(app) {
     app.get('/api/audiencia', audiencia.findAll);
 
     //CRUD PROCESAMIENTO DE CONOCIMIENTO
-
-
+    app.get('/api/proco', proco.findAll);
+    app.get('/api/proco/:procoId', proco.findById);
 }
