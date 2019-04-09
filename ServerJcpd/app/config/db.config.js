@@ -19,8 +19,9 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.analisisCasos = require('../model/analisis_casos.js')(sequelize, Sequelize);
-db.audiencia = require('../model/audiencia.js')(sequelize, Sequelize);
+db.analisisCasos = require('../model/analisis_casos.model.js')(sequelize, Sequelize);
+db.audiencia = require('../model/audiencia.model.js')(sequelize, Sequelize);
+db.audienciaprueba = require('../model/audiencia_pueba.model.js')(sequelize, Sequelize);
 
 
 db.casos = require('../model/casos.model.js')(sequelize, Sequelize);

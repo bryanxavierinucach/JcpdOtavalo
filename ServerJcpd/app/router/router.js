@@ -8,6 +8,8 @@ module.exports = function(app) {
     const casos = require('../controller/casos.controller.js');
     const analisisCasos = require('../controller/analisis_casos.controller.js');
     const audiencia = require('../controller/audiencia.controller.js');
+    const audienciaprueba = require('../controller/audiencia_prueba.controller.js')
+
     app.use(function(req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "x-access-token, Origin, Content-Type, Accept");
@@ -57,4 +59,8 @@ module.exports = function(app) {
     //CRUD AUDIENCIA
     app.post('/api/audiencia', audiencia.create);
     app.get('/api/audiencia', audiencia.findAll);
+
+    //CRUD AUDIENCIA PRUEBA
+    app.post('/api/audienciaprueba', audienciaprueba.create);
+    app.get('/api/audienciaprueba', audienciaprueba.findAll);
 }
