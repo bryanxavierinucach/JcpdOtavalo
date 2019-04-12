@@ -64,6 +64,4 @@ module.exports = function(app) {
 
     app.post('/api/audienciaprueba', audienciaprueba.create);
     app.get('/api/audienciaprueba', audienciaprueba.findAll);
-    app.get('/api/audienciaprueba/:audienciapruebaId', audienciaprueba.findById);
-
 }

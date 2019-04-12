@@ -21,7 +21,7 @@ db.sequelize = sequelize;
 
 db.analisisCasos = require('../model/analisis_casos.model.js')(sequelize, Sequelize);
 db.audiencia = require('../model/audiencia.model.js')(sequelize, Sequelize);
-db.audienciapruebas = require('../model/audienciaprueba.model.js')(sequelize, Sequelize);
+db.audienciaprueba = require('../model/audienciaprueba.model.js')(sequelize, Sequelize);
 
 db.casos = require('../model/casos.model.js')(sequelize, Sequelize);
 db.user = require('../model/user.model.js')(sequelize, Sequelize);
