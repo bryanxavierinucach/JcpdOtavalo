@@ -9,6 +9,7 @@ module.exports = function(app) {
     const analisisCasos = require('../controller/analisis_casos.controller.js');
     const audiencia = require('../controller/audiencia.controller.js');
     const audienciaprueba = require('../controller/audienciaprueba.controller.js');
+    const avocatoria = require('../controller/avocatoria.controller.js');
 
     app.use(function(req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
@@ -60,10 +61,14 @@ module.exports = function(app) {
     app.post('/api/audiencia', audiencia.create);
     app.get('/api/audiencia', audiencia.findAll);
 
-    //CRUD PROCESAMIENTO DE CONOCIMIENTO
+    //CRUD AUDIENCIA PRUEBA
 
     app.post('/api/audienciaprueba', audienciaprueba.create);
     app.get('/api/audienciaprueba', audienciaprueba.findAll);
     app.get('/api/audienciaprueba/:audienciapruebaId', audienciaprueba.findById);
+
+    //CRUD AVOCATORIA
+    app.post('/api/avocatoria', avocatoria.create);
+    app.get('/api/avocatoria', avocatoria.findAll);
 
 }

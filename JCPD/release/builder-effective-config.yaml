@@ -30,4 +30,4 @@ linux:
   icon: dist
   target:
     - AppImage
-electronVersion: 4.0.4
+electronVersion: 4.1.1
