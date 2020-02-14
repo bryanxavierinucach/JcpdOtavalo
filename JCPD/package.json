@@ -90,7 +90,7 @@
         "wait-on": "3.2.0",
         "webdriver-manager": "12.1.0",
         "workspace": "0.0.1-preview.1",
-        "yarn": "1.12.1",
+        "yarn": "1.22.0",
         "zone.js": "0.8.26"
     }
 }
